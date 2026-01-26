@@ -7,23 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{95DCBCD8-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{F97C95FE-2F50-4756-A191-140A3E78CABF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Domain", "FinanceManagmentApp.Domain\Fintrack.Domain.csproj", "{F507AD84-7E17-474E-9A31-20AA29D2BD32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Domain", "Fintrack.Domain\Fintrack.Domain.csproj", "{F507AD84-7E17-474E-9A31-20AA29D2BD32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Services.Abstractions", "FinanceManagmentApp.Services.Abstractions\Fintrack.Services.Abstractions.csproj", "{66A9F177-6B2B-4954-863F-26A947F9C3E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Services.Abstractions", "Fintrack.Services.Abstractions\Fintrack.Services.Abstractions.csproj", "{66A9F177-6B2B-4954-863F-26A947F9C3E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Services", "FinanceManagmentApp.Services\Fintrack.Services.csproj", "{459F73A2-0D48-42AE-889D-7E88E9E25580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Services", "Fintrack.Services\Fintrack.Services.csproj", "{459F73A2-0D48-42AE-889D-7E88E9E25580}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Shared", "FinanceManagmentApp.Shared\Fintrack.Shared.csproj", "{3581C067-DF40-4F74-A4C3-F15073BE8B4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Shared", "Fintrack.Shared\Fintrack.Shared.csproj", "{3581C067-DF40-4F74-A4C3-F15073BE8B4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Infrastructure", "FinanceManagmentApp.Infrastructure\Fintrack.Infrastructure.csproj", "{56AF33FC-A8F3-4E2E-9A54-29E7B52D5E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Infrastructure", "Fintrack.Infrastructure\Fintrack.Infrastructure.csproj", "{56AF33FC-A8F3-4E2E-9A54-29E7B52D5E33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Tests", "FinanceManagmentApp.Tests\Fintrack.Tests.csproj", "{DED0756E-2FCE-4D05-AFB2-5E537005090A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Tests", "Fintrack.Tests\Fintrack.Tests.csproj", "{DED0756E-2FCE-4D05-AFB2-5E537005090A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.WebAPI", "FinanceManagmentApp.WebAPI\Fintrack.WebAPI.csproj", "{902516EE-6186-4E85-AAC8-51F9C45335CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.WebAPI", "Fintrack.WebAPI\Fintrack.WebAPI.csproj", "{902516EE-6186-4E85-AAC8-51F9C45335CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Frontend", "FinanceManagmentApp.Frontend\Fintrack.Frontend.csproj", "{45A179BD-5D09-4276-96B5-06423CA5857F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintrack.Frontend", "Fintrack.Frontend\Fintrack.Frontend.csproj", "{45A179BD-5D09-4276-96B5-06423CA5857F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintrack.ExternalClients.Abstractions", "FinanceManagmentApp.ExternalClients.Abstractions\Fintrack.ExternalClients.Abstractions.csproj", "{E4596A4F-0AE5-467B-AD81-E491B6693DC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintrack.ExternalClients.Abstractions", "Fintrack.ExternalClients.Abstractions\Fintrack.ExternalClients.Abstractions.csproj", "{E4596A4F-0AE5-467B-AD81-E491B6693DC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.Web/sites/FintrackAPI/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDefaultConnection_4CB2E5EB8D",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/fmadbserver/databases/fmadb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection"
+    }
+  }
+}

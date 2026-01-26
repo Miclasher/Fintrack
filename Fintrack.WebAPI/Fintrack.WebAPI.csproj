@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>96d6526f-860d-4947-b8ec-4141c0ce7080</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.2" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fintrack.Domain\Fintrack.Domain.csproj" />
+    <ProjectReference Include="..\Fintrack.Infrastructure\Fintrack.Infrastructure.csproj" />
+    <ProjectReference Include="..\Fintrack.Services.Abstractions\Fintrack.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\Fintrack.Services\Fintrack.Services.csproj" />
+    <ProjectReference Include="..\Fintrack.Shared\Fintrack.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
