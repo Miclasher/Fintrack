@@ -78,6 +78,8 @@ public class AuthServiceTests : ServiceTestsBase
 
         _mockRepositoryManager.Setup(r => r.User.UsernameExistsAsync(userRegisterDto.Username, It.IsAny<CancellationToken>()))
             .ReturnsAsync(false);
+        _mockRepositoryManager.Setup(r => r.TransactionTypeTemplate.GetAllWithMccAsync(It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new List<TransactionTypeTemplate>());
         _mockJwtUtility.Setup(j => j.GenerateAccessToken(It.IsAny<Guid>()))
             .Returns("accessToken");
         _mockJwtUtility.Setup(j => j.GenerateRefreshToken())
