@@ -61,7 +61,7 @@ public sealed class FinancialOperationService : IFinancialOperationService
         var finOps = await _repositoryManager.FinancialOperation.GetAllByUserAsync(userId, cancellationToken);
 
         return finOps
-            .OrderBy(finop => finop.Date)
+            .OrderByDescending(finop => finop.Date)
             .Adapt<IEnumerable<FinancialOperationDTO>>();
     }
 
