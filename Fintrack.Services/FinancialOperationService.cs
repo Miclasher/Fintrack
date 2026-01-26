@@ -60,7 +60,9 @@ public sealed class FinancialOperationService : IFinancialOperationService
     {
         var finOps = await _repositoryManager.FinancialOperation.GetAllByUserAsync(userId, cancellationToken);
 
-        return finOps.Adapt<IEnumerable<FinancialOperationDTO>>();
+        return finOps
+            .OrderBy(finop => finop.Date)
+            .Adapt<IEnumerable<FinancialOperationDTO>>();
     }
 
     public async Task<FinancialOperationDTO> GetByIdAsync(Guid userId, Guid id, CancellationToken cancellationToken = default)
