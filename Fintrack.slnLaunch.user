@@ -1,14 +1,27 @@
 [
   {
-    "Name": "New Profile",
+    "Name": "Base Debug (API + Blazor)",
     "Projects": [
       {
-        "Path": "FinanceManagmentApp.WebAPI\\Fintrack.WebAPI.csproj",
+        "Path": "Fintrack.WebAPI\\Fintrack.WebAPI.csproj",
         "Action": "Start"
       },
       {
-        "Path": "FinanceManagmentApp.Frontend\\Fintrack.Frontend.csproj",
+        "Path": "Fintrack.Frontend\\Fintrack.Frontend.csproj",
         "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "Base Release (API + Blazor)",
+    "Projects": [
+      {
+        "Path": "Fintrack.WebAPI\\Fintrack.WebAPI.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "Fintrack.Frontend\\Fintrack.Frontend.csproj",
+        "Action": "StartWithoutDebugging"
       }
     ]
   }
