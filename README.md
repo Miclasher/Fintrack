@@ -1,6 +1,6 @@
 ﻿# FinTrack - Personal Finance Management App
 
-FinTrack is a comprehensive personal finance management application designed to help you track your income and expenses, gain insights into your spending habits, and manage your financial health effectively. Built with .NET 8, Blazor, and a Web API backend, it offers a modern and responsive user experience.
+FinTrack is a comprehensive personal finance management application designed to help you track your income and expenses, gain insights into your spending habits, and manage your financial health effectively. Built with .NET 10, Blazor, and a Web API backend, it offers a modern and responsive user experience.
 
 ## Features
 
@@ -15,8 +15,8 @@ FinTrack is a comprehensive personal finance management application designed to 
 
 ## Tech Stack
 
-*   **Frontend:** Blazor Server (.NET 8)
-*   **Backend:** ASP.NET Core Web API (.NET 8)
+*   **Frontend:** Blazor Server (.NET 10)
+*   **Backend:** ASP.NET Core Web API (.NET 10)
 *   **Database:** Microsoft SQL Server
 *   **Authentication:** JSON Web Tokens (JWT)
 *   **API Documentation:** Swagger (OpenAPI)
@@ -27,8 +27,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Prerequisites
 
-*   [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-*   [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with the ASP.NET and web development workload
+*   [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
+*   [Visual Studio 2026](https://visualstudio.microsoft.com/vs/) with the ASP.NET and web development workload
 *   Microsoft SQL Server (e.g., Express, Developer, or LocalDB)
 
 ### Installation & Configuration
@@ -79,10 +79,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  Set the `Fintrack.WebAPI` project as the startup project and run it (F5 or Ctrl+F5). This will launch the backend API.
 2.  Set the `Fintrack.Frontend` project as the startup project and run it.
-3.  Alternatively, you can configure the solution to start both projects simultaneously:
-    *   Right-click the solution in Solution Explorer and select **Properties**.
-    *   Go to **Common Properties > Startup Project**.
-    *   Select **Multiple startup projects** and set the Action for both `Fintrack.WebAPI` and `Fintrack.Frontend` to **Start**.
+3.  Alternatively, you can launch both projects simultaneously by setting Base Debug or Base Release launch templates in Visual Studio.
 
 ## API Documentation
 
