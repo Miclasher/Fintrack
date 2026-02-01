@@ -26,10 +26,6 @@ public partial class MonobankImportSecond : Migration
             name: "TransactionTypeId",
             table: "Mcc");
 
-        migrationBuilder.RenameTable(
-            name: "Mcc",
-            newName: "Mcc");
-
         migrationBuilder.AddPrimaryKey(
             name: "PK_Mcc",
             table: "Mcc",
@@ -1477,10 +1473,6 @@ COMMIT TRANSACTION;
         migrationBuilder.DropPrimaryKey(
             name: "PK_Mcc",
             table: "Mcc");
-
-        migrationBuilder.RenameTable(
-            name: "Mcc",
-            newName: "Mcc");
 
         migrationBuilder.AddColumn<Guid>(
             name: "TransactionTypeId",

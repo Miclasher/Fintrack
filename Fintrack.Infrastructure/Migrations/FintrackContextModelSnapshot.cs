@@ -17,7 +17,7 @@ namespace Fintrack.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.13")
+                .HasAnnotation("ProductVersion", "10.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -50,7 +50,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("FinancialOperations");
+                    b.ToTable("FinancialOperations", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.JwtRefreshToken", b =>
@@ -80,7 +80,7 @@ namespace Fintrack.Infrastructure.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshTokens", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.Mcc", b =>
@@ -94,7 +94,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mccs");
+                    b.ToTable("Mcc", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.TransactionType", b =>
@@ -118,7 +118,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TransactionTypes");
+                    b.ToTable("TransactionTypes", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.TransactionTypeTemplate", b =>
@@ -137,7 +137,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransactionTypeTemplates");
+                    b.ToTable("TransactionTypeTemplates", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.User", b =>
@@ -175,7 +175,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("MccTransactionType", b =>
@@ -190,7 +190,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasIndex("TransactionTypesId");
 
-                    b.ToTable("MccTransactionType");
+                    b.ToTable("MccTransactionType", (string)null);
                 });
 
             modelBuilder.Entity("MccTransactionTypeTemplate", b =>
@@ -205,7 +205,7 @@ namespace Fintrack.Infrastructure.Migrations
 
                     b.HasIndex("TransactionTypeTemplatesId");
 
-                    b.ToTable("MccTransactionTypeTemplate");
+                    b.ToTable("MccTransactionTypeTemplate", (string)null);
                 });
 
             modelBuilder.Entity("Fintrack.Domain.Entities.FinancialOperation", b =>

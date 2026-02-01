@@ -17,6 +17,11 @@ public sealed class FintrackContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(FintrackContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(FintrackContext).Assembly,
+            type => type.GetInterfaces().Any(i =>
+                i.IsGenericType &&
+                i.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>))
+        );
     }
 }
