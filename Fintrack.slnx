@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Fintrack.Domain/Fintrack.Domain.csproj" />
+    <Project Path="Fintrack.ExternalClients.Abstractions/Fintrack.ExternalClients.Abstractions.csproj" />
+    <Project Path="Fintrack.Services.Abstractions/Fintrack.Services.Abstractions.csproj" />
+    <Project Path="Fintrack.Services/Fintrack.Services.csproj" />
+  </Folder>
+  <Folder Name="/External/">
+    <Project Path="Fintrack.Infrastructure/Fintrack.Infrastructure.csproj" />
+    <Project Path="Fintrack.Shared/Fintrack.Shared.csproj" />
+    <Project Path="Fintrack.WebAPI/Fintrack.WebAPI.csproj" />
+  </Folder>
+  <Project Path="Fintrack.Frontend/Fintrack.Frontend.csproj" />
+  <Project Path="Fintrack.Tests/Fintrack.Tests.csproj" />
+</Solution>
