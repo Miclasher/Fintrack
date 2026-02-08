@@ -53,7 +53,8 @@ Follow these instructions to get a copy of the project up and running on your lo
       "Jwt": {
         "Issuer": "YourIssuer",
         "Audience": "YourAudience",
-        "Key": "YourSuperSecretAndLongEnoughKeyForSigning"
+        "Key": "YourSuperSecretAndLongEnoughKeyForSigning",
+        "RefreshTokenExpirationMinutes" : "1440"
       }
     }
     ```

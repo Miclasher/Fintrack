@@ -3,6 +3,8 @@ using Fintrack.Domain.Repositories;
 using Fintrack.Services.Abstractions;
 using Fintrack.Services.Utilities;
 using Fintrack.Shared;
+using Microsoft.Extensions.Configuration;
+using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Fintrack.Services;
@@ -11,10 +13,14 @@ public sealed class AuthService : IAuthService
 {
     private readonly IJwtUtility _jwtProvider;
     private readonly IRepositoryManager _repositoryManager;
-    public AuthService(IJwtUtility jwtProvider, IRepositoryManager repositoryManager)
+
+    private readonly int RefreshTokenLifetime;
+    public AuthService(IJwtUtility jwtProvider, IRepositoryManager repositoryManager, IConfiguration configuration)
     {
         _jwtProvider = jwtProvider;
         _repositoryManager = repositoryManager;
+
+        RefreshTokenLifetime = int.Parse(configuration["Jwt:RefreshTokenExpirationMinutes"] ?? throw new NullReferenceException("Please specify refresh token expiration time in config (Jwt:RefreshTokenExpirationMinutes)"));
     }
 
     public async Task<AuthResponseDTO> LoginAsync(UserLoginDTO user, CancellationToken cancellationToken = default)
@@ -120,7 +126,7 @@ public sealed class AuthService : IAuthService
         {
             Id = Guid.NewGuid(),
             Token = _jwtProvider.GenerateRefreshToken(),
-            ExpiryDate = DateTime.UtcNow.AddDays(15),
+            ExpiryDate = DateTime.UtcNow.AddMinutes(RefreshTokenLifetime),
             CreatedAt = DateTime.UtcNow,
             UserId = userId
         };
