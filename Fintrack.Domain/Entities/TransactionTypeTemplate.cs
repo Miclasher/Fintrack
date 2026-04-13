@@ -1,8 +1,9 @@
-﻿namespace Fintrack.Domain.Entities;
+﻿using Fintrack.Domain.Entities.Abstract;
 
-public sealed class TransactionTypeTemplate
+namespace Fintrack.Domain.Entities;
+
+public sealed class TransactionTypeTemplate : Entity
 {
-    public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public bool IsExpense { get; set; }
     public IEnumerable<Mcc> Mccs { get; set; } = new List<Mcc>();

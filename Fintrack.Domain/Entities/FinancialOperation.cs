@@ -1,8 +1,9 @@
-﻿namespace Fintrack.Domain.Entities;
+﻿using Fintrack.Domain.Entities.Abstract;
 
-public sealed class FinancialOperation
+namespace Fintrack.Domain.Entities;
+
+public sealed class FinancialOperation : Entity
 {
-    public Guid Id { get; set; }
     public decimal Amount { get; set; }
     public DateTime Date { get; set; }
     public string? UserComment { get; set; }

@@ -1,8 +1,9 @@
-﻿namespace Fintrack.Domain.Entities;
+﻿using Fintrack.Domain.Entities.Abstract;
 
-public sealed class User
+namespace Fintrack.Domain.Entities;
+
+public sealed class User : Entity
 {
-    public Guid Id { get; set; }
     public string Username { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;

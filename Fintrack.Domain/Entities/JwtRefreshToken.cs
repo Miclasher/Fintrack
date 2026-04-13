@@ -1,8 +1,9 @@
-﻿namespace Fintrack.Domain.Entities;
+﻿using Fintrack.Domain.Entities.Abstract;
 
-public sealed class JwtRefreshToken
+namespace Fintrack.Domain.Entities;
+
+public sealed class JwtRefreshToken : Entity
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
     public string Token { get; set; } = string.Empty;
     public DateTime ExpiryDate { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

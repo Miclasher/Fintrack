@@ -1,8 +1,9 @@
-﻿namespace Fintrack.Domain.Entities;
+﻿using Fintrack.Domain.Entities.Abstract;
 
-public sealed class TransactionType
+namespace Fintrack.Domain.Entities;
+
+public sealed class TransactionType : Entity
 {
-    public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public bool IsExpense { get; set; }
     public Guid UserId { get; set; }
