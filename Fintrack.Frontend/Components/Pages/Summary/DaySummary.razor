@@ -28,6 +28,24 @@
                 <dd class="text-danger">@(Summary.TotalExpense * -1)</dd>
             </div>
         </dl>
+        <div class="m-3">
+            <dt>Diagram</dt>
+            @if (GetDiagramTotal() > 0)
+            {
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: @GetIncomePercentage()%;">
+                        Income @Summary.TotalIncome
+                    </div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: @GetExpensePercentage()%;">
+                        Expenses @(Summary.TotalExpense * -1)
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted">No data to build diagram.</p>
+            }
+        </div>
         <table class="table m-3">
             <thead>
                 <tr>
@@ -87,5 +105,37 @@
         {
             ErrorMessage = ex.Message;
         }
+    }
+
+    private decimal GetDiagramTotal()
+    {
+        if (Summary is null)
+        {
+            return 0;
+        }
+
+        return Summary.TotalIncome + Math.Abs(Summary.TotalExpense);
+    }
+
+    private string GetIncomePercentage()
+    {
+        var total = GetDiagramTotal();
+        if (total == 0)
+        {
+            return "0";
+        }
+
+        return Math.Round((Summary.TotalIncome / total) * 100, 2).ToString(System.Globalization.CultureInfo.InvariantCulture);
+    }
+
+    private string GetExpensePercentage()
+    {
+        var total = GetDiagramTotal();
+        if (total == 0)
+        {
+            return "0";
+        }
+
+        return Math.Round((Math.Abs(Summary.TotalExpense) / total) * 100, 2).ToString(System.Globalization.CultureInfo.InvariantCulture);
     }
 }
