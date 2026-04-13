@@ -2,6 +2,8 @@
 @rendermode InteractiveServer
 @inject ITransactionTypeService TransactionTypeService
 @inject ISummaryService SummaryService
+@inject ISummaryExportService SummaryExportService
+@inject IJSRuntime JsRuntime
 <h3>Date Range Summary</h3>
 
 @if (!string.IsNullOrEmpty(ErrorMessage))
@@ -23,6 +25,7 @@
             <InputDate id="EndDate" @bind-Value="DateRange.EndDate" />
         </div>
         <button type="submit" class="btn btn-primary m-3">Get Date Range Summary</button>
+        <button type="button" class="btn btn-success m-3" @onclick="ExportDateRangeSummaryToExcel">Export to Excel</button>
     </EditForm>
 </div>
 
@@ -120,6 +123,25 @@
         catch (Exception ex)
         {
             Summary = null!;
+            ErrorMessage = ex.Message;
+        }
+    }
+
+    private async Task ExportDateRangeSummaryToExcel()
+    {
+        try
+        {
+            var fileBytes = await SummaryExportService.ExportDateRangeSummaryToExcel(DateRange);
+            var fileName = $"date-range-summary-{DateRange.StartDate:yyyy-MM-dd}-to-{DateRange.EndDate:yyyy-MM-dd}.xlsx";
+            var fileBase64 = Convert.ToBase64String(fileBytes);
+
+            await JsRuntime.InvokeVoidAsync("downloadFileFromBytes", fileName,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileBase64);
+
+            ErrorMessage = null;
+        }
+        catch (Exception ex)
+        {
             ErrorMessage = ex.Message;
         }
     }

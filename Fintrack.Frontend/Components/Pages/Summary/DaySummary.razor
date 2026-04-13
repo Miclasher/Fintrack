@@ -1,7 +1,9 @@
 ﻿@page "/daySummary"
 @rendermode InteractiveServer
 @inject ISummaryService SummaryService
+@inject ISummaryExportService SummaryExportService
 @inject ITransactionTypeService TransactionTypeService
+@inject IJSRuntime JsRuntime
 
 <h3>DaySummary</h3>
 @if (!string.IsNullOrEmpty(ErrorMessage))
@@ -13,6 +15,7 @@
     <h5>Enter a day to get summary for it:</h5>
     <InputDate @bind-Value="Date" />
     <button class="btn btn-primary m-3" @onclick="GetDaySummary">Get Day Summary</button>
+    <button class="btn btn-success m-3" @onclick="ExportDaySummaryToExcel">Export to Excel</button>
 </div>
 
 @if (Summary is not null)
@@ -100,6 +103,26 @@
         try
         {
             Summary = await SummaryService.GetDaySummary(Date);
+            ErrorMessage = null;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
+        }
+    }
+
+    private async Task ExportDaySummaryToExcel()
+    {
+        try
+        {
+            var fileBytes = await SummaryExportService.ExportDaySummaryToExcel(Date);
+            var fileName = $"day-summary-{Date:yyyy-MM-dd}.xlsx";
+            var fileBase64 = Convert.ToBase64String(fileBytes);
+
+            await JsRuntime.InvokeVoidAsync("downloadFileFromBytes", fileName,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileBase64);
+
+            ErrorMessage = null;
         }
         catch (Exception ex)
         {

@@ -42,6 +42,7 @@ public static class Program
         builder.Services.AddScoped<IFinancialOperationService, FinancialOperationService>();
         builder.Services.AddScoped<IMonobankImportService, MonobankImportService>();
         builder.Services.AddScoped<ISummaryService, SummaryService>();
+        builder.Services.AddScoped<ISummaryExcelExportService, SummaryExcelExportService>();
 
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters
